@@ -1,0 +1,104 @@
+git add
+-- Estrutura para tabela `adm`
+--
+
+CREATE TABLE `adm` (
+  `ID` int(11) NOT NULL,
+  `NOME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `LOGIN` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `SENHA` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `adm`
+--
+
+INSERT INTO `adm` (`ID`, `NOME`, `LOGIN`, `SENHA`) VALUES
+(0, 'Adminis Trador', 'admUser', 'admSenha');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `alunos`
+--
+
+CREATE TABLE `alunos` (
+  `ID` int(11) NOT NULL,
+  `NOME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `SEXO` enum('M','F') DEFAULT NULL,
+  `IDADE` int(2) NOT NULL,
+  `LOGIN` varchar(50) DEFAULT NULL,
+  `SENHA` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `alunos`
+--
+
+INSERT INTO `alunos` (`ID`, `NOME`, `SEXO`, `IDADE`, `LOGIN`, `SENHA`) VALUES
+(1, 'Tiago Siqueira Pereira', 'M', 32, NULL, NULL),
+(2, 'Paulo Fernando Moreira', 'M', 33, NULL, NULL),
+(3, 'Viviane Aparecida Moreira', 'F', 33, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `mensagem`
+--
+
+CREATE TABLE `mensagem` (
+  `ID_MSG` int(11) NOT NULL COMMENT 'id para especificar cada mensagem',
+  `CODIGO_ALUNO` int(11) NOT NULL,
+  `EMAIL` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `MENSAGEM` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `adm`
+--
+ALTER TABLE `adm`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `LOGIN` (`LOGIN`) USING HASH;
+
+--
+-- Índices de tabela `alunos`
+--
+ALTER TABLE `alunos`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `LOGIN` (`LOGIN`);
+
+--
+-- Índices de tabela `mensagem`
+--
+ALTER TABLE `mensagem`
+  ADD PRIMARY KEY (`ID_MSG`),
+  ADD KEY `fk_aluno` (`CODIGO_ALUNO`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `alunos`
+--
+ALTER TABLE `alunos`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `mensagem`
+--
+ALTER TABLE `mensagem`
+  ADD CONSTRAINT `fk_aluno` FOREIGN KEY (`CODIGO_ALUNO`) REFERENCES `alunos` (`ID`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
