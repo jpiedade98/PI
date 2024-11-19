@@ -286,3 +286,27 @@ function achaPosicaoId(id, qtdAlunos) {
 	}
 	return posicao
 }
+// EXIBIR DIV AO PRESSIONAR BOTÃO
+function exibeDivs(id) {
+	if(document.getElementById(id).style.display == "block") {
+	  document.getElementById(id).style.display = "none";
+	  return;
+	}
+	if(document.getElementById(id).classList.contains("hide")) {
+		Array.from(document.getElementsByClassName("hide")).forEach(
+			div => (div.style.display = "none")
+		);
+	} else {
+		Array.from(document.getElementsByClassName("aHide")).forEach(
+			div => (div.style.display = "none")
+		);
+	}
+	document.getElementById(id).style.display = "block";
+}
+
+// LISTAR ALUNOS
+$(document).ready(function(){
+	$("#bListarAlunos").click(function(){
+		$("#corpoTabela").load("js/lista.php");
+	});
+});
