@@ -4,3 +4,4 @@
 O __Projeto Site Escolar Univesp 2024__ tem como objetivo facilitar a comunicação entre pais, alunos e direção escola
 
 __Link da aplicação__ //C:/Users/TSP/Desktop/Projeto%20PI/projeto-escola-web-main/projeto-escola-web-main/index.html
+[README.md](https://github.com/user-attachments/files/17807797/README.md)
