@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colégio Galileu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    * {
+        margin:0;
+        padding: 0;
+        box-sizing: 0;;
+    }
+    body {
+        width: 100vw;
+        height: 150vh;
+        background-image: url(./Img/capa.png);
+    }
+    
+</style>
+<body>
+
+</body>
+    <header>
+        <h1>COLÉGIO GALILEU</h1>
+        <p class="descricao">Educação Infantil, Ensino Fundamental I, Ensino Fundamental II, Ensino Bilíngue-PES.</p>
+    </header>
+    <div id= "logo">
+        <img src="./Img/educajambeiro.png">
+
+    </div>
+
+</div>
+<div class="entrada">
+    <input type="button" value="Novo Aluno" id="bNovoAluno" onclick="exibeDivs('cadastrar')"/>
+    <input type="button" value="Listar Alunos" id="bListarAlunos" onclick="exibeDivs('listar')"/>
+    <input type="button" value="Editar Cadastro" id="bEditarCadastro" onclick="exibeDivs('alterar')"/>
+    <input type="button" value="Remover Aluno" id="bRemoverAluno" onclick="exibeDivs('remover')"/> 
+    <input type="button" value="Sobre Escola" id="bSobreEscola" onclick="exibeDivs('sobre')"/>  
+            <input type="button" value="Notícias" id="bNoticias" onclick="exibeDivs('noticias')"/>   
+        </div>
+        <section>
+            <div class="hide" id="cadastrar">
+                <form id="formCadastro">
+                    <label for="txtNome">Nome</label><input type="text" name="nome" id="txtNome" placeholder="Digite seu nome..."/>
+                    <label for="sSexo">Sexo</label><br>
+                    <select class="opcoes" name="sexo" id="sSexo">
+                        <option disabled selected>Escolha sua opção</option>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                        <option>Outros</option>
+                    </select><br>
+                    <label for="numIdade">Idade</label><br><input type="number" name="idade" id="numIdade" placeholder="Digite sua idade..."/>
+                    <input type="button" value="Cadastrar" id="bCadastrar" onclick="cadastrar()">
+                </form>
+            </div>
+            <div class="hide" id="listar">
+                <h2>Tipos de Listagem</h2>
+                <input type="button" value="Padrão" id="listagemPadrao">
+                <input type="button" value="Alfabética" id="listagemAlfabetica">
+                <input type="button" value="Idade Crescente" id="listagemIdadeCre">
+                <h1 id="titleLista">Lista de Alunos</h1>
+                <table id="listaAlunos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Sexo</th>
+                            <th>Idade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabela">
+                    </tbody>
+                </table>
+        </div>
+        <div class="hide" id="alterar">
+            <label for="alterarAluno">Digite o ID do aluno</label><br>
+            <input type="number" id="alterarAluno" placeholder="Digite o ID..."><br>
+            <label>O que deseja alterar?</label><br>
+            <input type="button" value="Nome" id="alterarNome" onclick="exibeDivs('divNovoNome')">
+            <input type="button" value="Sexo" id="alterarSexo" onclick="exibeDivs('divNovoSexo')">
+            <input type="button" value="Idade" id="alterarIdade" onclick="exibeDivs('divNovaIdade')">
+                <div class="aHide" id="divNovoNome">
+                    <label for="novoNome">Novo Nome</label>
+                    <input type="text" id="novoNome" placeholder="Digite o novo nome...">
+                    <input type="button" id="btnAlterarNome" value="Alterar">
+                </div>
+                <div class="aHide" id="divNovoSexo">
+                    <label for="sNovoSexo">Novo Sexo</label>
+                    <select class="opcoes" name="novoSexo" id="sNovoSexo">
+                        <option disabled="disabled" selected="selected">Escolha sua opção</option>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                        <option>Outros</option>
+                    </select><br>
+                    <input type="button" id="btnAlterarSexo" value="Alterar">
+                </div>
+                <div class="aHide" id="divNovaIdade">
+                    <label for="novaIdade">Nova Idade</label>
+                    <input type="text" id="novaIdade" placeholder="Digite a nova idade...">
+                    <input type="button" id="btnAlterarIdade" value="Alterar">
+                </div>
+        </div>
+        <div class="hide" id="remover">
+            <label for="idAluno">Digite o ID do aluno</label><br>
+            <input type="number" id="idAluno" placeholder="Digite o ID..."><br>
+            <input type="button" value="Remover" id="btnRemover" onclick="remover()">
+            <input type="button" value="Remover Todos Alunos" id="bRemoverTodos">
+        </div>
+        <div class="hide" id="sobre">
+            <header>
+                
+                <h5>Conheça a Escola</h5>
+                <p align="justify"
+                <p class="descricao">Colégio Galileu: Desvendando os Mistérios do Universo do Conhecimento
+                    Em um universo de aprendizado infinito, o Colégio Galileu surge como um farol de conhecimento, guiando seus alunos em uma jornada extraordinária de descobertas e realizações. Fundado em 2000, o Colégio Galileu carrega consigo a paixão pela educação e o compromisso de formar cidadãos completos, preparados para os desafios do século XXI. <
+                    
+                   <h5>Nossa Missão:</h5> 
+             
+                    <p class= "descricao" > Acender a Chama do Saber: Instigar a curiosidade natural dos alunos, despertando em cada um o amor pelo aprendizado e a busca incessante pelo conhecimento.
+                    Formar Cidadãos Engajados: Cultivar valores como ética, responsabilidade social, respeito à diversidade e sustentabilidade, preparando os alunos para serem agentes de transformação positiva no mundo.
+                    Desenvolver Talentos Excepcionais: Estimular o desenvolvimento integral de cada aluno, reconhecendo e nutrindo suas habilidades e talentos únicos.
+                    Construir um Futuro Brilhante: Preparar os alunos para alcançar seus sonhos e objetivos, munindo-os das ferramentas e do conhecimento necessários para trilhar um caminho de sucesso e realização pessoal.exclamation
+                    Nossa Visão:
+                    
+                    Ser referência em educação de qualidade, reconhecido por sua excelência acadêmica, valores éticos e compromisso com o desenvolvimento integral dos alunos.
+                    Formar cidadãos conscientes, engajados e preparados para os desafios do mundo contemporâneo.
+                    Cultivar um ambiente de aprendizagem inspirador, onde a criatividade, a colaboração e o respeito à diversidade florescem.
+                    Promover a inovação e a constante atualização pedagógica, buscando sempre oferecer o melhor aos nossos alunos.
+                    Nossos Diferenciais:
+                    
+                    Currículo Rigoroso e Atualizado: Mergulhe em um universo de conhecimento com nosso currículo cuidadosamente elaborado, que abrange desde as disciplinas tradicionais até as mais inovadoras, como robótica, programação e design thinking.exclamation
+                    Metodologias Ativas e Engajadoras: Diga adeus à monotonia! Através de metodologias ativas e inovadoras, como a aprendizagem baseada em projetos e gamificação, você será protagonista do seu próprio aprendizado.
+                    Professores Apaixonados e Experientes: Uma equipe de especialistas apaixonados por suas áreas e com vasta experiência em ensino, prontos para te guiar em sua jornada de aprendizado.
+                    Acompanhamento Personalizado: Um olhar atento às suas necessidades e ritmo de aprendizagem, com acompanhamento individualizado para garantir que você alcance todo o seu potencial.
+                    Estrutura Moderna e Tecnológica: Laboratórios equipados, salas de aula amplas e climatizadas, biblioteca completa e um ambiente digital de última geração para garantir uma experiência de aprendizado de excelência.
+                    Atividades Extracurriculares Completas: Explore seus talentos e paixões com uma gama completa de atividades extracurriculares, desde esportes e artes até robótica e olimpíadas científicas.
+                    Formação Integral: Mais do que apenas conhecimento, cultivamos valores como ética, responsabilidade social e respeito à diversidade, preparando você para os desafios do mundo atual.
+                    Um Ambiente Acolhedor e Seguro: Um ambiente acolhedor e seguro, onde você se sentirá à vontade para se expressar, aprender e fazer novas amizades.
+                    Comunidade Vibrante: Famílias engajadas, eventos especiais e um compromisso com a sustentabilidade constroem uma comunidade vibrante e colaborativa que contribui para o sucesso de cada aluno.exclamation 
+                    
+                    <h5>No Colégio Galileu, você encontrará:</h5> 
+                    
+                    <p class= "descricao" >Um ambiente de aprendizado estimulante e desafiador: Aqui, você será incentivado a pensar criticamente, questionar, colaborar e construir seu próprio conhecimento.
+                    Um leque de oportunidades para explorar seus talentos e paixões: Participe de atividades extracurriculares, projetos especiais e competições que te permitirão desenvolver suas habilidades e interesses.
+                    Um corpo docente altamente qualificado e dedicado: Nossos professores são apaixonados pelo ensino e estão comprometidos em te ajudar a alcançar todo o seu potencial.
+                    Um ambiente acolhedor e inclusivo: Aqui, você se sentirá valorizado e respeitado, independentemente de sua origem, cultura ou crenças.
+                    Uma comunidade vibrante e solidária: Faça parte de uma comunidade de alunos, pais e professores que se apoiam mutuamente e compartilham a paixão pelo aprendizado.
+                    Venha fazer parte da família Colégio Galileu e embarque em uma jornada de aprendizado que transformará sua vida!
+                    
+                    Colégio Galileu: Despertando a sua Paixão pelo Saber! </p>
+                    
+                    </p>
+                <h5>Onde fica Colégio Galileu?</h5>
+            <p class="descricao" >R. Santo Antônio, 145-199 - Vila Antônio Augusto Luiz, Caçapava - SP, 12287-060 Caçapava, SP. </p>
+
+            <h5>Contato</h5>
+            <p class="descricao" >Telefone (12) 99250-4508 Email: 
+                secretaria.galileu@yahoo.com.br</p>
+            </header>
+                    
+            </header>
+            
+        </div>
+        <div class="hide" id="noticias">
+            </div>
+        <br>
+    </section>
+    <footer>
+        <p>&copy; Univesp Polo Jambeiro</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

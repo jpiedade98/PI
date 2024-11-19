@@ -1,0 +1,216 @@
+
+
+header {
+    background-color: #0dbdf8;
+    font: normal 20pt Arial;
+    color: rgb(252, 252, 246);
+    width: 1500px;
+    text-align: center;
+    padding: 1%;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px rgba(18, 18, 18, 0.988);
+    margin: auto;
+    display: block;
+}
+
+input {
+
+    background-color: rgb(255, 255, 246);
+    margin: 25px;
+    padding: 25px;
+    font: normal 12pt Arial;
+    color: black;
+    border-radius: 60px;
+    border-color: rgb(12, 12, 12);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.246);
+    cursor: pointer;
+}
+
+.descricao {
+    font: normal 12pt Arial;
+    color: rgba(10, 0, 0, 0.637);
+    text-align: auto;
+}
+
+.entrada {
+    
+    font: normal 20pt Arial;
+    width: 1300px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    height: 125px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px rgb(16, 16, 16);
+}
+
+input[type=button]:hover{
+    color: #49AEC2;
+}
+
+.hide {
+    display: none;
+}
+
+.aHide {
+    display: none;
+}
+
+label {
+    font: normal 14pt Arial;
+    color: rgba(255, 255, 255, 0.746);
+}
+
+div#cadastrar {
+    background-color: rgb(253, 253, 250);
+    font: normal 20pt Arial;
+    width: 380px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px rgba(17, 17, 17, 0.466);
+    padding-top: 3px;
+}
+
+
+div#listar {
+    background-color: rgb(248, 248, 247);
+    font: normal 20pt Arial;
+    color: rgb(18, 17, 17);
+    width: 720px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
+    padding: 1px;
+    padding-bottom: 25px;
+}
+
+div#alterar {
+    background-color: rgb(255, 255, 254);
+    font: normal 20pt Arial;
+    color: rgb(17, 16, 16);
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
+    padding: 2px;
+    padding-top: 12px;
+}
+
+div#remover {
+    background-color: rgb(253, 253, 252);
+    font: normal 20pt Arial;
+    color: rgb(15, 15, 15);
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
+    padding: 2px;
+    padding-top: 12px;
+}
+   
+    
+select {
+    background-color: rgba(255, 255, 255, 0.966);
+    margin: 25px;
+    padding: 15px;
+    font: normal 12pt Arial;
+    color: black;
+    border-radius: 60px;
+    border-color: rgba(255, 255, 255, 0);
+    box-shadow: 5px 5px 5px rgba(23, 4, 228, 0.246);
+    cursor: pointer;
+}
+
+p#pSexo {
+    font: normal 14pt Arial;
+    color: rgba(241, 241, 241, 0.746);
+}
+
+input#txtNome {
+   padding: 12px;
+   width: 300px;
+   cursor: text;
+}
+
+input#numIdade {
+    padding: 10px;
+    width: 160px;
+    cursor: text;
+}
+
+input#alterarAluno {
+    width: 120px;
+    height: 10px;
+    cursor: text;
+}
+
+input#novoNome {
+    padding: 12px;
+    width: 240px;
+    cursor: text;
+}
+
+input#novaIdade {
+    padding: 10px;
+    width: 165px;
+    cursor: text;
+}
+
+input#idAluno {
+    width: 120px;
+    height: 10px;
+    cursor: text;
+}
+
+p#infoClick {
+    font: normal 14pt Arial;
+    color: rgb(248, 203, 4);
+    padding: 16px;
+}
+
+table, th, td {
+    background-color: rgb(252, 251, 248);
+    border: 3px solid black;
+    border-collapse: collapse;
+    width: 640px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px 20px;
+    color: black;
+    text-align: center;
+}
+
+footer {
+    background-color: rgb(255, 255, 248);
+    width: 180px;
+    font: italic 12pt Arial;
+    color: rgb(10, 0, 0);
+    text-align: center;
+    margin: auto;
+    border-radius: 12px;
+    padding: 1px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.246);
+}
+
+div#logo img {
+
+    position:absolute;
+    max-width: 110px;
+    top: 0%;
+    
+    
+
+    
+
+}
+
